@@ -10,8 +10,8 @@ matrix:
       env:
         - CFLAGS="-arch i386"
 
-script:
-- make
+#script:
+#- make
 
 #addons:
 #  apt:
