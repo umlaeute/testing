@@ -1,3 +1,4 @@
 [submodule "iemnet"]
 	path = iemnet
 	url = https://github.com/umlaeute/pd-iemnet.git
+	branch = master
