@@ -2,6 +2,11 @@ language: c
 
 sudo: false
 
+env:
+ global:
+  - UNAME=$(uname -s)
+  - PD_PATH=$(pwd)/pd
+
 matrix:
   include:
     - os: linux
@@ -10,7 +15,11 @@ matrix:
         apt:
           packages:
             - gcc-mingw-w64-i686
-      env: CC=i686-w64-mingw32-gcc
+      env: 
+       - HOST=i686-w64-mingw32-
+       - LIBS=-lpthread
+       - LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base"
+       - UNAME=MINGW
     - os: osx
       env:
         - CFLAGS="-arch x86_64"
@@ -18,6 +27,8 @@ matrix:
       env:
         - CFLAGS="-arch i386"
 
-script:
-- make
+before_script:
+ - curl -O "http://msp.ucsd.edu/Software/pd-0.46-7.msw.zip" && unzip pd-0.46-7.msw.zip
 
+script:
+- make -C iemnet UNAME="${UNAME}" CC="${HOST}$(CC}" LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" PD_PATH="${PD_PATH}"
