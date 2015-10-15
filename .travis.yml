@@ -31,4 +31,4 @@ before_script:
  - curl -O "http://msp.ucsd.edu/Software/pd-0.46-7.msw.zip" && unzip pd-0.46-7.msw.zip
 
 script:
-- make -C iemnet UNAME="${UNAME}" CC="${HOST}$(CC}" LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" PD_PATH="${PD_PATH}"
+- make -C iemnet UNAME="${UNAME}" CC="${HOST}${CC}" LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" PD_PATH="${PD_PATH}"
