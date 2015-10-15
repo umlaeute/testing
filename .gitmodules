@@ -4,5 +4,5 @@
 [submodule "test2"]
 	path = test2
 	url = https://github.com/umlaeute/test2.git
-	push-url = git@github.com:umlaeute/test2.git
+	pushurl = git@github.com:umlaeute/test2.git
 	branch = master
