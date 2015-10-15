@@ -1,7 +1,5 @@
 .PHONY: all clean
+default: all
 
-all: helloworld
-	file $^
-
-clean:
-	rm -rf helloworld helloworld.exe
+clean all:
+	make -C iemnet $@
