@@ -5,6 +5,12 @@ sudo: false
 matrix:
   include:
     - os: linux
+    - os: linux
+      addons:
+        apt:
+          packages:
+            - gcc-mingw-w64-i686
+      env: CC=i686-w64-mingw32-gcc
     - os: osx
       env:
         - CFLAGS="-arch x86_64"
@@ -15,7 +21,3 @@ matrix:
 #script:
 #- make
 
-#addons:
-#  apt:
-#    packages:
-#      - gcc-mingw-w64-i686
