@@ -5,7 +5,6 @@ sudo: false
 env:
  global:
   - UNAME=$(uname -s)
-  - PD_PATH=$(pwd)/pd
 
 matrix:
   include:
@@ -31,4 +30,4 @@ before_script:
  - curl -O "http://msp.ucsd.edu/Software/pd-0.46-7.msw.zip" && unzip pd-0.46-7.msw.zip
 
 script:
-- make -C iemnet UNAME="${UNAME}" CC="${HOST}${CC}" LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" PD_PATH="${PD_PATH}" PD_INCLUDE="${PD_PATH}/src"
+- make -C iemnet UNAME="${UNAME}" CC="${HOST}${CC}" LDFLAGS="${LDFLAGS}" LIBS="${LIBS}" PD_PATH="${TRAVIS_BUILD_DIR}/pd" PD_INCLUDE="${TRAVIS_BUILD_DIR}/pd/src"
