@@ -2,6 +2,3 @@
 	path = iemnet
 	url = https://github.com/umlaeute/pd-iemnet.git
 	branch = master
-[submodule "pd"]
-	path = pd
-	url = http://git.code.sf.net/p/pure-data/pure-data
