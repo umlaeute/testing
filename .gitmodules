@@ -3,5 +3,6 @@
 	url = git@github.com:umlaeute/git-hooks.git
 [submodule "test2"]
 	path = test2
-	url = git@github.com:umlaeute/test2.git
+	url = https://github.com:umlaeute/test2.git
+	push-url = git@github.com:umlaeute/test2.git
 	branch = master
