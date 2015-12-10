@@ -7,3 +7,4 @@ git commit -m "self-modifying script $0 stroke back" "${0}"
 exit 0
 
 ## here comes the foo
+Don Dez 10 16:17:38 CET 2015
