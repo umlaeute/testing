@@ -1,0 +1,5 @@
+#!/bin/sh
+
+date >> /tmp/githook.txt
+cat >> /tmp/githook.txt
+
