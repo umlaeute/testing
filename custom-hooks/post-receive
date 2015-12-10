@@ -1,7 +1,0 @@
-#!/bin/sh
-
-echo "hmmm"
-
-#date >> /tmp/githook.txt
-#cat >> /tmp/githook.txt
-
