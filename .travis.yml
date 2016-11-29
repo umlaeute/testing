@@ -19,5 +19,6 @@ matrix:
         - CFLAGS="-arch i386"
 
 script:
+- ./script.sh
 - make
 
