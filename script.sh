@@ -16,5 +16,7 @@ find /usr/local/bin
 echo "======================"
 find /usr/local -type f -executable
 echo "======================"
+apt-cache search mingw-w64
+echo "======================"
 
 exit 0
