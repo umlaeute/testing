@@ -12,7 +12,7 @@ int main() {
 #if defined(_WIN32) && defined(__x86_64__)
   printf("Win64 (old style)\n");
 #endif
-#if defined(_WIN32) && (defined(__x86_64__) || defined (_M_X64))
+#if defined(_WIN32) && defined (_M_X64)
   printf("Win64 (new style)\n");
 #endif
   return 0;
