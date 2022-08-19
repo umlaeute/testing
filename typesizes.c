@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define print_type(t) printf("sizeof(" #t ")\t= %d\n", sizeof(t))
+#define print_type(t) printf("%d\tsizeof(" #t ")\n", (int)sizeof(t))
 
 int main() {
   print_type( void* );
