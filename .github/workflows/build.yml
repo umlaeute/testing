@@ -1,5 +1,4 @@
 name: Build and run typesizes
-
 on: push
 
 jobs:
@@ -34,7 +33,6 @@ jobs:
         run: |
           ./typesizes
 
-
   Windows:
     runs-on: windows-latest
     steps:
@@ -48,121 +46,4 @@ jobs:
           cmake --build .
       - name: Run
         run: |
-          ./typesizes
-
-
-
-  makefile_mac:
-    runs-on: macos-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Build
-        run: |
-          make -C src -f makefile.mac ARCH="" EXTRAARCH=""
-
-#  makefile_mingw:
-#    runs-on: windows-latest
-#    defaults:
-#      run:
-#        shell: msys2 {0}
-#    steps:
-#      - name: Install MSYS2
-#        uses: msys2/setup-msys2@v2
-#        with:
-#          release: false
-#          path-type: inherit
-#      - name: Checkout code
-#        uses: actions/checkout@v2
-#      - name: ASIOSDK
-#        run: |
-#          wget -q -O asiosdk.zip https://www.steinberg.net/asiosdk
-#          unzip -q asiosdk.zip -d asio
-#          i=0; for f in asio/*/; do test -d "${f}" || break; echo "${f}"; until mv -v "${f%/}" asio/ASIOSDK; do echo "trying $i"; sleep 1; i=$((i+1)); if [ $i -ge 10 ]; then echo "giving up"; break; fi; done; done
-#      - name: Build
-#        run: |
-#          make -C src -f makefile.mingw
-
-          ## the MSVC-builds are run on AppVeyor... no need to duplicate the effort
-#  makefile_msvc:
-#    runs-on: windows-latest
-#    if: ${{ false }}
-#    strategy:
-#      fail-fast: false
-#      matrix:
-#       include:
-#         - arch: "x64"
-#           aflags: "/D__x86_64__"
-#         - arch: "x86"
-#           aflags: "/D__i386__"
-#    env:
-#      AFLAGS: ${{ matrix.aflags }}
-#      arch: ${{ matrix.arch }}
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v2
-#      - name: pthreads
-#        run: |
-#          curl -o pthreads.zip ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-2-9-1-release.zip
-#          unzip pthreads.zip -d pthreads
-#          mkdir -p src bin
-#          cp pthreads/Pre-built.2/include/* src/
-#          cp pthreads/Pre-built.2/dll/${arch}/pthreadVC2.dll bin/pthreadVC2.dll
-#          cp pthreads/Pre-built.2/lib/${arch}/pthreadVC2.lib bin/pthreadVC.lib
-#        shell: 'bash'
-#      - name: Setup Visual Studio Cmdline
-#        uses: ilammy/msvc-dev-cmd@v1
-#        with:
-#          arch: ${{ matrix.arch }}
-#      - name: Build
-#        run: |
-#          cd src
-#          nmake /f makefile.msvc AFLAGS="${env:AFLAGS} /DHAVE_STRUCT_TIMESPEC=1"
-
-
-
-################################################################
-## code linters: check permissions and whitespace
-################################################################
-  check_file_permissions:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' && ( github.event.action == 'opened' || github.event.action == 'synchronize' ) }}
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Find files that are executable but shouldnt be
-      run: |
-        if find $(git diff --name-only ${{github.event.pull_request.base.sha}} ) -type f -executable -iregex '.*\.\(pd\|txt\|c[^.]*\|h[^.]*\)$' | grep .; then
-          echo "Data files should never have the EXECUTABLE BIT set!"
-          exit 2
-        fi
-
-  check_EOL:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' && ( github.event.action == 'opened' || github.event.action == 'synchronize' ) }}
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Find files that use CRLF line-endings
-      run: |
-        if find $(git diff --name-only ${{github.event.pull_request.base.sha}} ) -type f -iregex '.*\.\(pd\|txt\|h\|c\)$' -exec file {} + | grep CRLF; then
-          echo "some files now use CRLF as the line terminator"
-          exit 2
-        fi
-
-  check_whitespace:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' && ( github.event.action == 'opened' || github.event.action == 'synchronize' ) }}
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: use 'git diff-index' to check for whitespace errors
-        #git diff-index --check ${{github.event.pull_request.base.sha}}
-        ## some files (like .patch files or .md) have legit trailing whitespace so ignore them...
-      run: |
-        find . -name .git -prune -o -type f -not -iregex '.*\.\(patch\|md\)' -print0 | xargs -0 git diff-index --check ${{github.event.pull_request.base.sha}} --
+          typesizes.exe
