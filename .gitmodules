@@ -1,8 +1,0 @@
-[submodule "hooks"]
-	path = hooks
-	url = https://github.com/umlaeute/git-hooks.git
-[submodule "test2"]
-	path = test2
-	url = https://github.com/umlaeute/test2.git
-	pushurl = git@github.com:umlaeute/test2.git
-	branch = master
