@@ -1,5 +1,5 @@
 name: General Ticket
-description: Feature requests, improvements,...
+description: Feature requests, improvements, whatever...
 body:
   - type: textarea
     id: details
