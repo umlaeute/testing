@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/umlaeute/Gem/discussions
+    about: Ask questions and share ideas on our "discussion" page.
+  - name: Look for more Documentation
+    url: wiki
+    about: Check our WIKI to see whether your question has already been answered.
+  - name: Ask on the Pd mailinglist
+    url: https://lists.puredata.info/listinfo/pd-list
