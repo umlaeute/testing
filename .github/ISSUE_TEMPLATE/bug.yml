@@ -4,12 +4,22 @@ labels: ["bug"]
 assignees:
   - umlaeute
 body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Detail
+      description: What went wrong?
+      placeholder: |
+        What did you do, what did you expect, what happened?
+    validations:
+      required: true
+
   - type: input
     id: gemversion
     attributes:
       label: Gem Version
       description: What is the exact version of Gem you are using (as printed in the Pd-console)
-      placeholder: v0.94-312-g78fe990a0
+      placeholder: e.g. v0.94-312-g78fe990a0
     validations:
       required: true
   - type: input
@@ -17,7 +27,7 @@ body:
     attributes:
       label: Pd Version
       description: Which version of Pd are you using?
-      placeholder: 0.54-1
+      placeholder: e.g. 0.54-1
   - type: dropdown
     id: OS
     attributes:
@@ -33,7 +43,7 @@ body:
     attributes:
       label: OS Version
       description: Which version of the Operating System are you using?
-      placeholder: Ubuntu/4.10 "Warty"
+      placeholder: e.g. Ubuntu/4.10 "Warty"
   - type: dropdown
     id: arch
     attributes:
@@ -45,13 +55,3 @@ body:
         - arm64 ("64bit ARM"; e.g. Apple Silicon,...)
         - arm ("32bit ARM"; e.g. Raspberry Pi,...)
         - other
-
-  - type: textarea
-    id: details
-    attributes:
-      label: Detail
-      description: What went wrong?
-      placeholder: |
-        What did you do, what did you expect, what happened?
-    validations:
-      required: true
