@@ -24,8 +24,8 @@ body:
       label: Gem Version
       description: What is the exact version of Gem you are using (as printed in the Pd-console)
       placeholder: v0.94-312-g78fe990a0
-      validations:
-        required: true
+    validations:
+      required: true
   - type: input
     id: pdversion
     attributes:
