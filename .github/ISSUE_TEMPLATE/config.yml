@@ -1,8 +1,5 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Feature requests, improvements,...
-    url: https://github.com/umlaeute/Gem/issues/new
-    about: Open a general ticket
   - name: Ask a question
     url: https://github.com/umlaeute/Gem/discussions
     about: Ask questions and share ideas on our "discussion" page.
