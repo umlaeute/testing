@@ -1,5 +1,5 @@
 name:  Bug Report
-description: We can only fix problems we know about...
+description: We can only fix problems we know about.
 labels: ["bug"]
 assignees:
   - umlaeute
