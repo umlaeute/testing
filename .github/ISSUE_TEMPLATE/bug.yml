@@ -20,16 +20,18 @@ body:
 
   - type: input
     id: gemversion
-    label: Gem Version
-    description: What is the exact version of Gem you are using (as printed in the Pd-console)
-    placeholder: v0.94-312-g78fe990a0
-    validations:
-      required: true
+    attributes:
+      label: Gem Version
+      description: What is the exact version of Gem you are using (as printed in the Pd-console)
+      placeholder: v0.94-312-g78fe990a0
+      validations:
+        required: true
   - type: input
     id: pdversion
-    label: Pd Version
-    description: Which version of Pd are you using?
-    placeholder: 0.54-1
+    attributes:
+      label: Pd Version
+      description: Which version of Pd are you using?
+      placeholder: 0.54-1
   - type: dropdown
     id: OS
     attributes:
@@ -42,9 +44,10 @@ body:
         - other
   - type: input
     id: osversion
-    label: OS Version
-    description: Which version of the Operating System are you using?
-    placeholder: Ubuntu/5.10 "Breeze"
+    attributes:
+      label: OS Version
+      description: Which version of the Operating System are you using?
+      placeholder: Ubuntu/5.10 "Breeze"
   - type: dropdown
     id: arch
     attributes:
