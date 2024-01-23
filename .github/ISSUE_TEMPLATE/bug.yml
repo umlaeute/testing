@@ -1,4 +1,4 @@
-name:  Gem bug report
+name:  Bug Report
 description: We can only fix problems we know about...
 labels: ["bug"]
 assignees:
@@ -38,7 +38,6 @@ body:
     id: arch
     attributes:
       label: Which CPU are you using?
-      multiple: true
       options:
         - amd64/x86_64 ("64bit Intel")
         - i386 ("32bit Intel")
