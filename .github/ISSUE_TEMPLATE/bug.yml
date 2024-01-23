@@ -44,6 +44,7 @@ body:
         - arm64 ("64bit ARM"; e.g. Apple Silicon,...)
         - arm ("32bit ARM"; e.g. Raspberry Pi,...)
         - other
+        - n/a
 
   - type: textarea
     id: details
