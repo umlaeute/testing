@@ -1,0 +1,71 @@
+name:  Gem bug report
+description: We can only fix problems we know about...
+labels: ["bug"]
+assignees:
+  - umlaeute
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+        In order to track down the source of your problem, please provide
+        some general information about your system in addition to the actual bug report.
+
+        ```
+        GEM: Graphics Environment for Multimedia
+        GEM: ver: 0.94.git v0.94-835-g5d9091ea8
+        ```
+
+
+  - type: input
+    id: gemversion
+    attribute:
+      label: Gem Version
+      description: What is the exact version of Gem you are using (as printed in the Pd-console)
+      placeholder: v0.94-312-g78fe990a0
+      validations:
+        required: true
+  - type: input
+    id: pdversion
+    attribute:
+      label: Pd Version
+      description: Which version of Pd are you using?
+      placeholder: 0.54-1
+  - type: dropdown
+    id: OS
+    attributes:
+      label: Which Operating System are you using?
+      multiple: true
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - other
+  - type: input
+    id: osversion
+    attribute:
+      label: OS Version
+      description: Which version of the Operating System are you using?
+      placeholder: Ubuntu/5.10 "Breeze"
+  - type: dropdown
+    id: arch
+    attributes:
+      label: Which CPU are you using?
+      multiple: true
+      options:
+        - amd64/x86_64 (64bit Intel)
+        - i386 (32bit Intel)
+        - arm64 (64bit; Apple Silicon,...)
+        - arm (32bit; Raspberry Pi,...)
+        - other
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Detail
+      description: What went wrong?
+      placeholder: |
+        What did you do, what did you expect, what happened?
+    validations:
+      required: true
