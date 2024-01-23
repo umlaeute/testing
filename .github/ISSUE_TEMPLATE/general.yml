@@ -1,9 +1,9 @@
 name: General
+description: Please tell us
 body:
   - type: textarea
     id: details
     attributes:
       label: Add a description
-      description: Please tell us
     validations:
       required: true
