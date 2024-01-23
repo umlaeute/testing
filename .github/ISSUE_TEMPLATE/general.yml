@@ -1,0 +1,6 @@
+body:
+  - type: textarea
+    id: details
+    attributes:
+    validations:
+      required: true
