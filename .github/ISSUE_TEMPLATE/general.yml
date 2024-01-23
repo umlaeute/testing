@@ -1,3 +1,4 @@
+name: General
 body:
   - type: textarea
     id: details
