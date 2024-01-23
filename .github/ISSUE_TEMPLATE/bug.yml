@@ -4,20 +4,6 @@ labels: ["bug"]
 assignees:
   - umlaeute
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-
-        In order to track down the source of your problem, please provide
-        some general information about your system in addition to the actual bug report.
-
-        ```
-        GEM: Graphics Environment for Multimedia
-        GEM: ver: 0.94.git v0.94-835-g5d9091ea8
-        ```
-
-
   - type: input
     id: gemversion
     attributes:
@@ -47,17 +33,17 @@ body:
     attributes:
       label: OS Version
       description: Which version of the Operating System are you using?
-      placeholder: Ubuntu/5.10 "Breeze"
+      placeholder: Ubuntu/4.10 "Warty"
   - type: dropdown
     id: arch
     attributes:
       label: Which CPU are you using?
       multiple: true
       options:
-        - amd64/x86_64 (64bit Intel)
-        - i386 (32bit Intel)
-        - arm64 (64bit; Apple Silicon,...)
-        - arm (32bit; Raspberry Pi,...)
+        - amd64/x86_64 ("64bit Intel")
+        - i386 ("32bit Intel")
+        - arm64 ("64bit ARM"; e.g. Apple Silicon,...)
+        - arm ("32bit ARM"; e.g. Raspberry Pi,...)
         - other
 
   - type: textarea
