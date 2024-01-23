@@ -38,13 +38,13 @@ body:
     id: arch
     attributes:
       label: Which CPU are you using?
+      multiple: true
       options:
         - amd64/x86_64 ("64bit Intel")
         - i386 ("32bit Intel")
         - arm64 ("64bit ARM"; e.g. Apple Silicon,...)
         - arm ("32bit ARM"; e.g. Raspberry Pi,...)
         - other
-        - n/a
 
   - type: textarea
     id: details
