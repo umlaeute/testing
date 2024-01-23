@@ -26,12 +26,13 @@ body:
     id: pdversion
     attributes:
       label: Pd Version
-      description: Which version of Pd are you using?
+      description: Which version of Pure Data are you using?
       placeholder: e.g. 0.54-1
   - type: dropdown
     id: OS
     attributes:
-      label: Which Operating System are you using?
+      label: Operating System
+      description: Which OS are you using?
       multiple: true
       options:
         - Linux
