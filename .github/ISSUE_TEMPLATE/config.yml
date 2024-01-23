@@ -1,10 +1,10 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
   - name: Ask a question
     url: https://github.com/umlaeute/Gem/discussions
     about: Ask questions and share ideas on our "discussion" page.
   - name: Feature requests, improvements,...
-    url: https://github.com/umlaeute/issues/new
+    url: https://github.com/umlaeute/Gem/issues/new
     about: Open a general ticket
   - name: Ask on the mailinglist
     url: https://lists.puredata.info/listinfo/pd-list
