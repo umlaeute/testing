@@ -4,5 +4,6 @@ body:
     id: details
     attributes:
       label: Add a description
+      description: " "
     validations:
       required: true
