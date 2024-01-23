@@ -2,7 +2,7 @@ name: General
 body:
   - type: textarea
     id: details
-    label: Add a description
     attributes:
+      label: Add a description
     validations:
       required: true
